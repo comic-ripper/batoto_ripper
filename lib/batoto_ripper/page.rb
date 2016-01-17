@@ -40,7 +40,9 @@ module BatotoRipper
     private
 
     def page
-      @page ||= BatotoRipper.session.get "https://bato.to/areader?id=#{chapter_id}&p=#{number.to_i}", [], url
+      @page ||= BatotoRipper.session.get(
+        "https://bato.to/areader?id=#{chapter_id}&p=#{number.to_i}", [], url
+      )
     end
 
     def document

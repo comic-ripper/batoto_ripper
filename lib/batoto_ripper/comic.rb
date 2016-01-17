@@ -6,7 +6,7 @@ module BatotoRipper
     VALID_HOSTS = [
       /bato.to\z/,
       /batoto.net\z/
-    ]
+    ].freeze
 
     def self.applies?(url)
       uri = URI.parse(url)

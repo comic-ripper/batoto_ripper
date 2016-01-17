@@ -20,7 +20,7 @@ describe BatotoRipper::Page, vcr: true do
 
     # It requests the partial request page instead now, since they reader is split out
     let(:partial_page) do
-      "https://bato.to/areader?id=4aba6fc934a8d6c2&p=1"
+      'https://bato.to/areader?id=4aba6fc934a8d6c2&p=1'
     end
 
     it 'caches the image url / page' do

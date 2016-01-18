@@ -27,8 +27,8 @@ module BatotoRipper
 
     def match_regex
       /
-        ^(?:Vol\.\s*(\d+))?\s*       # Volume nr
-        Ch.\s*([\d\.]+-?[a-uw-z\d]*) # Chapter nr
+        ^(?:Vol\.\s*([\d-]+))?\s*       # Volume nr
+        Ch.\s*([\dA-UW-Za-uw-z\.]+-?[a-uw-z\d]*) # Chapter nr
         (?:v\d+?)?\s*\:?\s*          # Version
         (.*[^\s])                    # Chapter name
       /x

@@ -73,6 +73,20 @@ describe BatotoRipper::TitleParser do
         expect(parser.chapter).to eql '97'
       end
     end
+
+    context 'There is a range of chapters' do
+      let(:title) { 'Vol.89 Ch.36-40: Name Tag 13 v2' }
+      it 'will parse out the correct chapter' do
+        expect(parser.chapter).to eql '36-40'
+      end
+    end
+
+    context 'The chapter number is a word' do
+      let(:title) { 'Vol.1 Ch.Extra Read Online' }
+      it 'will parse the word correctly' do
+        expect(parser.chapter).to eql 'Extra'
+      end
+    end
   end
 
   describe('#volume') do
@@ -86,6 +100,12 @@ describe BatotoRipper::TitleParser do
       let(:title) { 'Vol.16 Ch.97: Level 97' }
       it 'will parse the volume correctly' do
         expect(parser.volume).to eql 16
+      end
+    end
+    context 'There is a volume range' do
+      let(:title) { 'Vol.8-9 Ch.36-40: Name Tag 13 v2' }
+      it 'will ignore the range and use the number' do
+        expect(parser.volume).to eql 8
       end
     end
   end
